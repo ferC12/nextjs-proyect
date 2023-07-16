@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { PlusCircleIcon, XCircleIcon } from "@heroicons/react/solid";
 import axios from "axios";
 import Modal from "@common/Modal";
@@ -131,12 +132,9 @@ export default function Products() {
                         {product.id}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a
-                          href="/edit"
-                          className="text-indigo-600 hover:text-indigo-900"
-                        >
-                          Edit
-                        </a>
+                        <Link href={`/dashboard/edit/${product.id}`}>
+                          <a className="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        </Link>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <XCircleIcon className="flex-shrink-0 h6 w-6 text-gray-400 cursor-pointer"
